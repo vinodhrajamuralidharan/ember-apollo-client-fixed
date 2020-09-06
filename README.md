@@ -1,6 +1,6 @@
 # ember-apollo-client-fixed
 
-_Use [@apollo/client][apollo-client] and GraphQL from your Ember app._
+_Use [apollo-client-fixed][apollo-client] and GraphQL from your Ember app._
 
 ![Download count all time](https://img.shields.io/npm/dt/ember-apollo-client-fixed.svg)
 [![npm version](https://badge.fury.io/js/ember-apollo-client-fixed.svg)](https://badge.fury.io/js/ember-apollo-client-fixed)
@@ -88,7 +88,7 @@ npm/yarn and import as desired.
 
 Here are some useful packages:
 
-* [@apollo/client][apollo-client]
+* [apollo-client-fixed][apollo-client]
 * [graphql-tag][graphql-tag-repo]
 * [graphql-tools][graphql-tools-repo]
 
@@ -296,8 +296,8 @@ Specifically, the `split` function is what we're after (note we are using
 import ApolloService from 'ember-apollo-client-fixed/services/apollo';
 import { inject as service } from '@ember/service';
 import { Socket } from 'phoenix';
-import { split } from '@apollo/client';
-import { getMainDefinition } from '@apollo/client/utilities';
+import { split } from 'apollo-client-fixed';
+import { getMainDefinition } from 'apollo-client-fixed/utilities';
 import { createAbsintheSocketLink } from '@absinthe/socket-apollo-link';
 import AbsintheSocket from '@absinthe/socket';
 
@@ -329,7 +329,7 @@ class OverriddenApollo extends ApolloService {
 Note: You will need to add the following dependencies to your project:
 
 ```sh
-yarn add -D @apollo/client
+yarn add -D apollo-client-fixed
 yarn add -D @absinthe/socket
 yarn add -D @absinthe/socket-apollo-link
 ```
@@ -497,7 +497,7 @@ The `apollo` service has the following public API:
   ```js
   import ApolloService from 'ember-apollo-client-fixed/services/apollo';
   import { inject as service } from '@ember/service';
-  import { setContext } from '@apollo/client/link/context';
+  import { setContext } from 'apollo-client-fixed/link/context';
   import { Promise } from 'rsvp';
 
   class OverriddenApollo extends ApolloService {
@@ -534,7 +534,7 @@ The `apollo` service has the following public API:
   Note: You will need to add the following dependencies to your project:
 
   ```sh
-  yarn add -D @apollo/client
+  yarn add -D apollo-client-fixed
   ```
 
 * `watchQuery(options, resultKey)`: This calls the

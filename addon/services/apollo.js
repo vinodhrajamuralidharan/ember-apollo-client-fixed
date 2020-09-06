@@ -9,7 +9,7 @@ import {
   ApolloClient,
   createHttpLink,
   InMemoryCache,
-} from '@apollo/client/core';
+} from 'apollo-client-fixed/core';
 import { getOwner } from '@ember/application';
 import { isArray } from '@ember/array';
 import { isNone, isPresent } from '@ember/utils';
