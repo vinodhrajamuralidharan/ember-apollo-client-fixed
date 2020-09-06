@@ -1,0 +1,32 @@
+<h2>My movie list</h2>
+
+<div class="actions-menu">
+  {{#if this.topRated}}
+    <LinkTo @route="index" @query={{hash topRated=false}} class="button toggle-top-rated">
+      Show all
+    </LinkTo>
+  {{else}}
+    <LinkTo @route="index" @query={{hash topRated=true}} class="button toggle-top-rated">
+      Show Top Rated
+    </LinkTo>
+  {{/if}}
+
+  <LinkTo @route="index" class="button">
+    Add movie
+  </LinkTo>
+
+  <button
+    {{action "refetchData" this.model}}
+    class="button refresh-data"
+    type="button"
+  >
+    Refetch
+  </button>
+</div>
+
+
+<div class="movie-list">
+  {{#each this.model.movies as |movie|}}
+    <MovieCard @movie={{movie}} />
+  {{/each}}
+</div>
